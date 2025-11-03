@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - health42</title>
+  <meta name="description" content="Get in touch with the health42 team. We're here to answer your questions.">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+  <script src="./js/app.js" defer></script>
+</head>
+<body data-page="contact">
+
+  <header class="main-header">
+    <div class="container">
+      <a href="./index.html" class="logo">health42</a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./catalog.html">Directory</a></li>
+          <li><a href="./blog.html">Blog</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container" style="max-width: 700px;">
+      <h1>Contact Us</h1>
+      <p>Have a question or feedback? Fill out the form below and we'll get back to you as soon as possible.</p>
+
+      <form id="contact-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" class="form-control" rows="6" required></textarea>
+        </div>
+        <div class="form-group hidden-website-field">
+            <label for="website">Website</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+        <p style="font-size: 0.8rem; color: var(--text-secondary);">Your privacy is important to us. We will never share your information. For more details, please read our <a href="./privacy.html">Privacy Policy</a>.</p>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <p>&copy; <span id="footer-year">2025</span> health42. All rights reserved.</p>
+      <p>Contact us: <a href="mailto:support@health42.net">support@health42.net</a></p>
+    </div>
+    <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+  </footer>
+
+</body>
+</html>

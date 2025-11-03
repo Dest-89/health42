@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin: Add Supplement - health42</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+  <script src="./js/app.js" defer></script>
+</head>
+<body data-page="admin-supplement">
+
+  <header class="main-header">
+    <div class="container">
+      <a href="./index.html" class="logo">health42</a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="admin-page">
+      <h1>Add/Edit Supplement</h1>
+      <p>Fill out the form to add a new supplement. The item is saved to local storage. Use the export button to generate the updated JSON file.</p>
+      
+      <form id="supplement-form">
+        <div class="grid grid-cols-2">
+            <div class="form-group"><label for="id">ID (slug)</label><input type="text" id="id" name="id" class="form-control" placeholder="unique-product-id"></div>
+            <div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name" class="form-control" required></div>
+        </div>
+        <div class="grid grid-cols-2">
+            <div class="form-group"><label for="brand">Brand</label><input type="text" id="brand" name="brand" class="form-control"></div>
+            <div class="form-group"><label for="category">Category</label><select id="category" name="category" class="form-control"></select></div>
+        </div>
+        <div class="form-group"><label for="tags">Tags (comma-separated)</label><input type="text" id="tags" name="tags" class="form-control"></div>
+        <div class="form-group"><label for="shortDescription">Short Description</label><textarea id="shortDescription" name="shortDescription" class="form-control"></textarea></div>
+        <div class="form-group"><label for="descriptionHtml">Description (HTML)</label><textarea id="descriptionHtml" name="descriptionHtml" class="form-control" rows="6"></textarea></div>
+        <div class="form-group"><label for="ingredients">Ingredients (name|dose|note per line)</label><textarea id="ingredients" name="ingredients" class="form-control" rows="5" placeholder="Magnesium|200 mg|Chelated"></textarea></div>
+        <div class="grid grid-cols-2">
+            <div class="form-group"><label for="price">Price</label><input type="number" step="0.01" id="price" name="price" class="form-control"></div>
+            <div class="form-group"><label for="compareAtPrice">Compare At Price</label><input type="number" step="0.01" id="compareAtPrice" name="compareAtPrice" class="form-control"></div>
+        </div>
+        <div class="grid grid-cols-3">
+            <div class="form-group"><label for="rating">Rating</label><input type="number" step="0.1" id="rating" name="rating" class="form-control"></div>
+            <div class="form-group"><label for="reviewsCount">Reviews Count</label><input type="number" id="reviewsCount" name="reviewsCount" class="form-control"></div>
+            <div class="form-group"><label for="servingsPerContainer">Servings</label><input type="number" id="servingsPerContainer" name="servingsPerContainer" class="form-control"></div>
+        </div>
+        <div class="form-group"><label for="images">Images (comma-separated URLs)</label><input type="text" id="images" name="images" class="form-control"></div>
+        <div class="form-group"><label for="clickbankHoplink">ClickBank Hoplink</label><input type="text" id="clickbankHoplink" name="clickbankHoplink" class="form-control" value="https://hop.clickbank.net/?affiliate=YOURID&vendor=VENDOR&tid={{utm}}"></div>
+        <div class="grid grid-cols-2">
+            <div class="form-group"><label for="sku">SKU</label><input type="text" id="sku" name="sku" class="form-control"></div>
+            <div class="form-group"><label for="countryOfOrigin">Country of Origin</label><input type="text" id="countryOfOrigin" name="countryOfOrigin" class="form-control"></div>
+        </div>
+        <div class="form-group"><label for="certifications">Certifications (comma-separated)</label><input type="text" id="certifications" name="certifications" class="form-control"></div>
+        <div class="form-group"><label for="directions">Directions</label><input type="text" id="directions" name="directions" class="form-control"></div>
+        <div class="form-group"><label for="warnings">Warnings</label><input type="text" id="warnings" name="warnings" class="form-control"></div>
+        <div class="form-group"><label for="allergens">Allergens (comma-separated)</label><input type="text" id="allergens" name="allergens" class="form-control"></div>
+        
+        <button type="submit" class="btn btn-primary">Save to Local Storage</button>
+      </form>
+
+      <div class="admin-export-section">
+        <h2>Export Data</h2>
+        <p>Click the button below to download the merged `supplements.json` file including all items from local storage.</p>
+        <button id="export-supplements" class="btn btn-secondary">Download supplements.json</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <p>Admin Page - <a href="./index.html">Return to site</a></p>
+    </div>
+  </footer>
+  <script>
+      // Small script to populate category dropdown on admin page
+      document.addEventListener('DOMContentLoaded', () => {
+          const categories = ['Dietary Supplements', 'Men’s Health', 'Women’s Health', 'Dental Health', 'Beauty', 'Diets & Weight Loss', 'Nutrition', 'Remedies'];
+          const select = document.getElementById('category');
+          if(select) {
+              categories.forEach(cat => {
+                  const option = document.createElement('option');
+                  option.value = cat;
+                  option.textContent = cat;
+                  select.appendChild(option);
+              });
+          }
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+
+User-agent: *
+Disallow: /admin-supplement.html
+Disallow: /admin-post.html

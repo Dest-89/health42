@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - health42</title>
+  <meta name="description" content="Read the latest articles on health, nutrition, and wellness from the experts at health42.">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+  <script src="./js/app.js" defer></script>
+</head>
+<body data-page="blog">
+
+  <header class="main-header">
+    <div class="container">
+      <a href="./index.html" class="logo">health42</a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./catalog.html">Directory</a></li>
+          <li><a href="./blog.html">Blog</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1>Health & Wellness Blog</h1>
+      <p>The latest articles on health, nutrition, and supplements from our experts.</p>
+
+      <div class="grid grid-cols-1 grid-md-cols-2 grid-lg-cols-3" id="blog-grid">
+        <!-- JS will populate this -->
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <p>&copy; <span id="footer-year">2025</span> health42. All rights reserved.</p>
+      <p>Contact us: <a href="mailto:support@health42.net">support@health42.net</a></p>
+    </div>
+    <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Title and meta description will be set dynamically by JavaScript -->
+  <title>health42</title>
+  <meta name="description" content="">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+  <script src="./js/app.js" defer></script>
+</head>
+<body data-page="supplement">
+
+  <header class="main-header">
+    <div class="container">
+      <a href="./index.html" class="logo">health42</a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./catalog.html">Directory</a></li>
+          <li><a href="./blog.html">Blog</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container" id="supplement-content">
+      <!-- JS will populate this section -->
+      <p>Loading supplement...</p>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <p>&copy; <span id="footer-year">2025</span> health42. All rights reserved.</p>
+      <p>Contact us: <a href="mailto:support@health42.net">support@health42.net</a></p>
+    </div>
+    <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+  </footer>
+
+</body>
+</html>

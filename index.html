@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>health42 - Smarter Supplement Picks, Powered by Research</title>
+  <meta name="description" content="Your trusted guide to the best health supplements. We provide expert reviews, detailed guides, and a curated directory to help you achieve your wellness goals.">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://health42.net/">
+  <meta property="og:title" content="health42 - Smarter Supplement Picks, Powered by Research">
+  <meta property="og:description" content="Your trusted guide to the best health supplements. We provide expert reviews, detailed guides, and a curated directory to help you achieve your wellness goals.">
+  <meta property="og:image" content="https://health42.net/assets/img/social-share.jpg"> <!-- Make sure to create this image -->
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://health42.net/">
+  <meta property="twitter:title" content="health42 - Smarter Supplement Picks, Powered by Research">
+  <meta property="twitter:description" content="Your trusted guide to the best health supplements. We provide expert reviews, detailed guides, and a curated directory to help you achieve your wellness goals.">
+  <meta property="twitter:image" content="https://health42.net/assets/img/social-share.jpg">
+
+  <link rel="stylesheet" href="./assets/css/styles.css">
+  <script src="./js/app.js" defer></script>
+
+  <!-- 
+  ==============================================================================
+  README: health42 Site Administration & Deployment
+  ==============================================================================
+
+  1. HOW TO CHANGE THE ADMIN KEY:
+     - Open the `/js/app.js` file.
+     - Find the line `adminKey: 'CHANGE_ME_LONG_RANDOM_VALUE'`.
+     - Replace 'CHANGE_ME_LONG_RANDOM_VALUE' with a new, secure, and random string.
+     - This key is required to access the admin pages.
+
+  2. HOW TO USE THE ADMIN PAGES:
+     - To add a new supplement, go to: /admin-supplement.html?key=YOUR_SECRET_KEY
+     - To add a new blog post, go to: /admin-post.html?key=YOUR_SECRET_KEY
+     - Fill out the form on the page. New items are saved to your browser's local storage.
+     - Click the "Download supplements.json" or "Download posts.json" button.
+     - This will download an updated JSON file containing both the original seed data and your new entries.
+
+  3. HOW TO UPDATE THE LIVE SITE DATA:
+     - After downloading the updated JSON file(s), you must upload it to the server.
+     - Replace the existing `/data/supplements.json` or `/data/posts.json` file on your web host with the new one you just downloaded.
+     - The website will then show the new content automatically.
+
+  4. NEWSLETTER & CONTACT FORM:
+     - All newsletter and contact form submissions are sent directly to the webhook endpoint configured in `/js/app.js`.
+     - No additional setup is needed for this functionality.
+
+  5. DEPLOYMENT ON EDITOR.IO (OR ANY STATIC HOST):
+     - This site is built with pure HTML, CSS, and JS. No build process is needed.
+     - To deploy, simply upload the entire project folder (including all files and subfolders like /assets, /data, /js) to your static web host.
+     - Ensure the file structure is maintained on the server.
+
+  ==============================================================================
+  -->
+
+</head>
+<body data-page="home">
+
+  <header class="main-header">
+    <div class="container">
+      <a href="./index.html" class="logo">health42</a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./catalog.html">Directory</a></li>
+          <li><a href="./blog.html">Blog</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Smarter supplement picks, powered by research.</h1>
+        <p>Your trusted guide to the best health supplements. We provide expert reviews, detailed guides, and a curated directory to help you achieve your wellness goals.</p>
+        <form class="newsletter-form" id="hero-newsletter-form">
+          <input type="text" name="name" class="form-control" placeholder="Your Name (Optional)">
+          <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
+          <input type="text" name="website" class="hidden-website-field" tabindex="-1" autocomplete="off">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="container" style="padding-bottom: 4rem;">
+        <h2 style="text-align: center; margin-bottom: 2rem;">Explore by Category</h2>
+        <div class="grid grid-cols-2 grid-md-cols-4" id="category-grid">
+            <a href="./catalog.html?category=Dietary+Supplements" class="card"> <div class="card-content" style="text-align:center;">Dietary Supplements</div> </a>
+            <a href="./catalog.html?category=Men’s+Health" class="card"> <div class="card-content" style="text-align:center;">Men’s Health</div> </a>
+            <a href="./catalog.html?category=Women’s+Health" class="card"> <div class="card-content" style="text-align:center;">Women’s Health</div> </a>
+            <a href="./catalog.html?category=Dental+Health" class="card"> <div class="card-content" style="text-align:center;">Dental Health</div> </a>
+            <a href="./catalog.html?category=Beauty" class="card"> <div class="card-content" style="text-align:center;">Beauty</div> </a>
+            <a href="./catalog.html?category=Diets+&+Weight+Loss" class="card"> <div class="card-content" style="text-align:center;">Diets & Weight Loss</div> </a>
+            <a href="./catalog.html?category=Nutrition" class="card"> <div class="card-content" style="text-align:center;">Nutrition</div> </a>
+            <a href="./catalog.html?category=Remedies" class="card"> <div class="card-content" style="text-align:center;">Remedies</div> </a>
+        </div>
+    </section>
+
+    <section class="container" style="padding-bottom: 4rem;">
+      <h2 style="text-align: center; margin-bottom: 2rem;">Featured Supplements</h2>
+      <div class="grid grid-cols-1 grid-md-cols-3" id="featured-supplements-grid">
+        <!-- JS will populate this -->
+      </div>
+    </section>
+
+    <section class="container" style="padding-bottom: 4rem;">
+      <h2 style="text-align: center; margin-bottom: 2rem;">Latest from the Blog</h2>
+      <div class="grid grid-cols-1 grid-md-cols-3" id="latest-posts-grid">
+        <!-- JS will populate this -->
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <form class="newsletter-form" id="footer-newsletter-form" style="margin-bottom: 2rem;">
+        <input type="email" name="email" class="form-control" placeholder="Enter your email to subscribe" required>
+        <input type="text" name="website" class="hidden-website-field" tabindex="-1" autocomplete="off">
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+      <p class="affiliate-disclaimer">As a ClickBank affiliate, we may earn a commission from qualifying purchases. This helps us continue to provide high-quality, research-backed content.</p>
+      <ul class="footer-links">
+        <li><a href="./privacy.html">Privacy Policy</a></li>
+        <li><a href="./terms.html">Terms of Use</a></li>
+      </ul>
+      <p>&copy; <span id="footer-year">2025</span> health42. All rights reserved.</p>
+      <p>Contact us: <a href="mailto:support@health42.net">support@health42.net</a></p>
+    </div>
+    <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+  </footer>
+
+</body>
+</html>
